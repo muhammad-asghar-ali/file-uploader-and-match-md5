@@ -1,0 +1,63 @@
+<div class="ui container">
+    <div class="field">
+        <p style="display:inline-block; font-size: 15px;"> Welcome <%= user.name %></p>
+        <a style="display:inline-block; font-size: 15px;" href="/users/logout">Logout</a>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <form action="/search" class="ui form" method="post">
+        <div class="field">
+            <label for="md5">MD5</label>
+            <input type="search" name="md5" placeholder="Search md5">
+        </div>
+    </form>
+</div>
+
+<br><br>
+
+
+<div class="ui container">
+    <form action="/add" class="ui form" method="post">
+        <div class="ui two fields">
+            <div class="field">
+                <label for="name">File Name</label>
+                <input type="text" name="name" placeholder="File Name">
+            </div>
+            <div class="field">
+                <label for="type">Type</label>
+                <select name="type" id="" placeholder="Select Type">
+                    <option value="image">image</option>
+                    <option value="pdf">pdf</option>
+                    <option value="exe">exe</option>
+                    <option value="exe">doc</option>
+                    <option value="dll">dll</option>
+                </select>
+            </div>           
+        </div>
+
+        <!-- HERE WE NEED TO USE FILEPOND -->
+        <div class="ui field">
+            <label for="img">File</label>
+            <input type="file" name="img" id="img" class="filepond filepond--item">
+        </div>
+        <button class="ui fluid blue button" type="submit">Save</button>       
+    </form>
+</div>
+
+
+<br><br>
+<div class="ui container">
+    <% if(files) { %>
+        <div class="ui small stackable images ">
+            <% files.forEach(m=> { %>
+                
+                <img src="<%= m.coverImagePath %>" alt="" class="ui image">
+                <% }) %>
+        </div>
+        <% } %>
+</div>
+
+

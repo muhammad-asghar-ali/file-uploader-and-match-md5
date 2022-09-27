@@ -1,0 +1,25 @@
+<h1 style="text-align: center"> Login </h1>
+<br><br>
+<div class="ui container">
+  <%- include ('./partials/messages') %>
+</div>
+<br>
+<div class="ui container">
+  <form action="/users/login" class="ui form" method="POST">
+    <div class="ui two fields">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Enter Email" />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter Password" />
+  
+      </div>
+    </div>   
+    <br> 
+    <button type="submit" class="ui fluid blue button">Login</button>
+
+  </form>
+</div>
+  
